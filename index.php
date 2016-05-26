@@ -7,7 +7,7 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Materialize store</title>
+    <title>Materialize AJAX</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </ul>
     </div>
 </nav>
-<div id="content" class="row">
+<div id="content" class="container">
     
 </div>
 <!--Import jQuery before materialize.js-->

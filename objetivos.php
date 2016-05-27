@@ -1,3 +1,9 @@
+<?php
+include('header.php');
+include_once('config/database.php');
+$sql = 'SELECT * FROM meta';
+
+?>
 <h1 class="center-align">Objetivos de vida</h1>
 <h3 class="green-text">Agregar un objetivo</h3>
 <div class="row">
@@ -12,3 +18,5 @@
         </div>
     </form>
 </div>
+
+<?php include('footer.php'); ?>

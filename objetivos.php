@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 include_once('config/database.php');
-$sql = 'SELECT * FROM meta';
+$sql = 'SELECT * FROM objetivo';
 
 ?>
 <h1 class="center-align">Objetivos de vida</h1>

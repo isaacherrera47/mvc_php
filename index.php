@@ -9,11 +9,11 @@ $sql = 'SELECT * FROM meta';
 <div class="row">
     <form id="formMeta">
         <div class="input-field col s12 m4">
-            <input id="nombre" name="nombre" type="text" class="validate">
+            <input required id="nombre" name="nombre" type="text" class="validate">
             <label for="nombre">Meta</label>
         </div>
         <div class="input-field col s12 m4">
-            <input id="descripcion" type="text" class="validate">
+            <input required id="descripcion" name="descripcion" type="text" class="validate">
             <label for="descripcion">Descripcion</label>
         </div>
         <div class="input-field col s12 m4">
@@ -22,7 +22,7 @@ $sql = 'SELECT * FROM meta';
         </div>
     </form>
 </div>
-<div class="row">
+<div id="containerMeta" class="row">
     <?php foreach ($conexion->query($sql) as $row) { ?>
         <div class="col s12 m2">
             <div class="card">
@@ -39,8 +39,8 @@ $sql = 'SELECT * FROM meta';
                     <p> <?php echo $row['descripcion'] ?></p>
                 </div>
                 <div class="card-action">
-                    <a class="modal-trigger" data-id="<?php echo $row['id'] ?>" href="#modalMeta">Actualizar</a>
-                    <a class="red-text darken-4" href="#">Borrar</a>
+                    <a class="modal-trigger actualizaMeta" data-id="<?php echo $row['id'] ?>" href="#modalMeta">Actualizar</a>
+                    <a class="red-text darken-4 borraMeta" data-id="<?php echo $row['id'] ?>" href="#">Borrar</a>
                 </div>
             </div>
         </div>

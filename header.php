@@ -16,11 +16,11 @@
         <a href="#" class="brand-logo">Meyobp</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a class="metas" href="#">Metas</a></li>
-            <li><a class="objetivos" href="#">Objetivos</a></li>
+            <li><a class="metas" href="index.php">Metas</a></li>
+            <li><a class="objetivos" href="objetivos.php">Objetivos</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li><a class="metas" href="metas.php">Metas</a></li>
+            <li><a class="metas" href="index.php">Metas</a></li>
             <li><a class="objetivos" href="objetivos.php">Objetivos</a></li>
         </ul>
     </div>

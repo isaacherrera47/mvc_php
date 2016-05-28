@@ -3,10 +3,12 @@ $(document).ready(function () {
     $('select').material_select();
 });
 
-$('#agregaMeta').click(function () {
+$('#formMeta').submit(function (e) {
+    e.preventDefault();
     if ($(this)[0].checkValidity()) {
         data = $('#formMeta').serialize();
         operacionMeta(data, 'C');
+        $('#formMeta')[0].reset();
     } else {
         Materialize.toast('Por favor completa los campos', 2000);
     }

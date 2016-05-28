@@ -18,5 +18,22 @@ $sql = 'SELECT * FROM objetivo';
         </div>
     </form>
 </div>
+<div class="row">
+    <h4 class="center-align">Lista de objetivos</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Detalles</th>
+                <th>Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Isaac</td>
+                <td><a href="#">Borrar</a><a href="">Actualizar</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <?php include('footer.php'); ?>

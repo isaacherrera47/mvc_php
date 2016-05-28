@@ -17,7 +17,7 @@ $sql = 'SELECT * FROM meta';
             <label for="descripcion">Descripcion</label>
         </div>
         <div class="input-field col s12 m4">
-            <button type="button" class="waves-effect waves-light btn" id="agregaMeta">Agregar meta
+            <button type="submit" class="waves-effect waves-light btn" id="agregaMeta">Agregar meta
                 <i class="material-icons right">send</i></button>
         </div>
     </form>

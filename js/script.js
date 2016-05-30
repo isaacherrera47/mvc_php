@@ -5,25 +5,38 @@ $(document).ready(function () {
 
 $('#formMeta').submit(function (e) {
     e.preventDefault();
-    if ($(this)[0].checkValidity()) {
-        data = $('#formMeta').serialize();
-        operacionMeta(data, 'C');
-        $('#formMeta')[0].reset();
-    } else {
-        Materialize.toast('Por favor completa los campos', 2000);
-    }
+    data = $('#formMeta').serialize();
+    operacionMeta(data, 'C');
+    $('#formMeta')[0].reset();
 });
+
+$('#formObjetivo').submit(function (e) {
+    e.preventDefault();
+    data = $(this).serialize();
+    operacionObjetivo(data,'C');
+    $('#formObjetivo')[0].reset();
+})
+
 //Elements created dynamically have to use this function
-$(document).on('click', '.modal-trigger', function () {
+$(document).on('click', '.actualizaMeta', function () {
     $('#modalMeta').openModal();
+});
+
+$(document).on('click', '.actualizaObjetivo', function () {
+    $('#modalObjetivo').openModal();
 });
 
 $(document).on('click', '.borraMeta', function () {
     var id = $(this).data('id');
-    operacionMeta('id='+id, 'D', this);
+    operacionMeta('id=' + id, 'D', this);
 });
 
-function operacionMeta(data, tipo,elemento) {
+$(document).on('click', '.borraObjetivo', function () {
+    var id = $(this).data('id');
+    operacionObjetivo('id=' + id, 'D', this);
+});
+
+function operacionMeta(data, tipo, elemento) {
     $.ajax({
         type: 'POST',
         url: 'controller/ajaxMeta.func.php',
@@ -39,6 +52,28 @@ function operacionMeta(data, tipo,elemento) {
                 case 'D':
                     $(elemento).parent().parent().remove();
                     Materialize.toast('Elemento eliminado', 2000);
+                    break;
+            }
+        }
+    })
+}
+
+function operacionObjetivo(data, tipo, elemento) {
+    $.ajax({
+        type: 'POST',
+        url: 'controller/ajaxObjetivo.func.php',
+        data: data+'&tipo='+tipo,
+        success: function (result) {
+            switch (tipo) {
+                case 'C':
+                    $('#containerObjetivo').append(result);
+                    Materialize.toast('Elemento creado',2000);
+                    break;
+                case 'U':
+                    break;
+                case 'D':
+                    $(elemento).parent().parent().remove();
+                    Materialize.toast('Elemento eliminado',2000);
                     break;
             }
         }

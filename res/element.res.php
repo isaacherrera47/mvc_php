@@ -17,9 +17,20 @@ function getCard($nombre, $descripcion, $id)
                     <p>' . $descripcion . '</p>
                 </div>
                 <div class="card-action">
-                    <a class="modal-trigger actualizaMeta" data-id="'.$id.'" href="#modalMeta">Actualizar</a>
+                    <a class="actualizaMeta" data-id="'.$id.'" href="#modalMeta">Actualizar</a>
                     <a class="red-text darken-4 borraMeta" data-id="'.$id.'" href="#">Borrar</a>
                 </div>
             </div>
         </div>';
+}
+
+function getRow($detalles,$id) 
+{
+    return '<tr>
+                <td>'.$detalles.'</td>
+                <td>
+                    <a class="btn-flat red-text waves-effect waves-red borraObjetivo" data-id="'.$id.'" href="#">Borrar</a>
+                    <a class="btn-flat waves-effect waves-green actualizaObjetivo" data-id="'.$id.'" href="#modalObjetivo">Actualizar</a>
+                </td>
+            </tr>';
 }
